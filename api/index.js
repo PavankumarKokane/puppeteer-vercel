@@ -1,8 +1,8 @@
 const express = require("express");
 const puppeteer = require("puppeteer-core");
 const chromium = require("@sparticuz/chromium");
-const fs = require("fs");
-const path = require("path");
+// const fs = require("fs");
+// const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -45,7 +45,7 @@ app.get("/", async (req, res) => {
 
     await browser.close();
 
-    fs.writeFileSync(path.join(__dirname, 'test.pdf'), pdfBuffer);
+    //fs.writeFileSync(path.join(__dirname, 'test.pdf'), pdfBuffer);
 
     console.log(`PDF Buffer size: ${pdfBuffer.length}`);
     
@@ -100,7 +100,7 @@ app.get("/download", async (req, res) => {
   
       await browser.close();
   
-      fs.writeFileSync(path.join(__dirname, 'test.pdf'), pdfBuffer);
+      //fs.writeFileSync(path.join(__dirname, 'test.pdf'), pdfBuffer);
   
       console.log(`PDF Buffer size: ${pdfBuffer.length}`);
       
